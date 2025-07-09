@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">{{ title }}</h1>
+        
+        <h2>Descriptive Statistics</h2>
+        <p>Mean: {{ mean_amount }}</p>
+        <p>Median: {{ median_amount }}</p>
+        <p>Standard Deviation: {{ std_dev_amount }}</p>
+        <p>Variance: {{ variance_amount }}</p>
+        <p>Skewness: {{ skewness_amount }}</p>
+        <p>Kurtosis: {{ kurtosis_amount }}</p>
+        
+        <h2>Visualizations</h2>
+        <div>
+            <h3>Histogram</h3>
+            <img src="data:image/png;base64,{{ histogram }}" class="img-fluid" alt="Histogram">
+        </div>
+        
+        <div>
+            <h3>Box Plot</h3>
+            <img src="data:image/png;base64,{{ boxplot }}" class="img-fluid" alt="Box Plot">
+        </div>
+        
+        <div>
+            <h3>Scatter Plot with Regression Line</h3>
+            <img src="data:image/png;base64,{{ scatterplot }}" class="img-fluid" alt="Scatter Plot">
+        </div>
+        
+        <div>
+            <h3>Correlation Matrix</h3>
+            <img src="data:image/png;base64,{{ correlation_matrix }}" class="img-fluid" alt="Correlation Matrix">
+        </div>
+        
+        <a href="/" class="btn btn-primary mt-3">Retour à l'accueil</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
