@@ -11,8 +11,6 @@
 - [Configuration](#configuration)
 - [Utilisation](#utilisation)
 - [Structure du Projet](#structure-du-projet)
-- [Captures d'Écran](#captures-décran)
-- [Améliorations Futures](#améliorations-futures)
 
 ---
 
