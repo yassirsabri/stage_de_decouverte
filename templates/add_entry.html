@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Entrée</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Accueil</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="/collectivites">Collectivités</a></li>
+                <li class="nav-item"><a class="nav-link" href="/postes_comptables">Postes Comptables</a></li>
+                <li class="nav-item"><a class="nav-link" href="/comptables">Comptables</a></li>
+                <li class="nav-item"><a class="nav-link" href="/nature_sinistre">Nature de Sinistre</a></li>
+                <li class="nav-item"><a class="nav-link" href="/cours_comptes">Cours des Comptes</a></li>
+                <li class="nav-item"><a class="nav-link" href="/add_entry">Ajouter une Entrée</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="mt-4">Ajouter une nouvelle entrée</h1>
+        <form method="post">
+           
+            <div class="form-group">
+                <label for="poste_comptable">Poste Comptable</label>
+                <input list="postes_comptables" class="form-control" id="poste_comptable" name="poste_comptable" required>
+                <datalist id="postes_comptables">
+                    {% for poste in postes_comptables %}
+                    <option value="{{ poste[0]}}">
+                    {% endfor %}
+                </datalist>
+            </div>
+            <div class="form-group">
+                <label for="numero_demande">Numéro de Demande</label>
+                <input type="text" class="form-control" id="numero_demande" name="numero_demande" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="nature_sinistre">Nature de Sinistre</label>
+                <input list="natures_sinistre" class="form-control" id="nature_sinistre" name="nature_sinistre" required>
+                <datalist id="natures_sinistre">
+                    {% for nature in nature_sinistre %}
+                    <option value="{{ nature[0] }}">
+                    {% endfor %}
+                </datalist>
+            </div>
+            <div class="form-group">
+                <label for="date_sinistre">Date de Sinistre</label>
+                <input type="date" class="form-control" id="date_sinistre" name="date_sinistre" required>
+            </div>
+            <div class="form-group">
+                <label for="montant">Montant</label>
+                <input type="number" class="form-control" id="montant" name="montant" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Soumettre</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
