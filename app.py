@@ -16,7 +16,8 @@ import base64
 app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'yassir_0000'
+#a changer
+app.config['MYSQL_PASSWORD'] = 'your_password'
 app.config['MYSQL_DB'] = 'new_schema'
 
 def get_db_connection():
